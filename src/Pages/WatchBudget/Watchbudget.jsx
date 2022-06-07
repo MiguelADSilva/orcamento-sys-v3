@@ -15,7 +15,8 @@ import {
   PriceTxt,
   TotalItemsTxt,
   ContentBtn,
-  Button } from './watchbudgetstyles'
+  Button,
+  FooterContent } from './watchbudgetstyles'
 
 import { useGetOrcamentosQuery } from '../../services/orcamentoAPI'
 
@@ -26,7 +27,6 @@ const Watchbudget = () => {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    console.log(budgetList?.orcamento, isFetching);
     const filteredData = budgetList?.orcamento.filter((budget) => budget.orcamentoName.toLowerCase().includes(search.toLowerCase()));
     setBudgetAppList(filteredData);
   }, [budgetList, search]);
@@ -63,8 +63,10 @@ const Watchbudget = () => {
                 </>
               ))
           }
-          </CardsContent>
-        <FooterC />
+          </CardsContent> 
+          <FooterContent>
+            <FooterC /> 
+          </FooterContent>
     </Content>
   )
 }

@@ -3,7 +3,7 @@ import { SearchOutlined } from '@ant-design/icons'
 
 
 export const Content = styled.div `
-    width: 100%;
+    min-width: 100%;
     background-color: #F8C982;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@ export const Content = styled.div `
     align-items: center;
 
     @media ${(props) => props.theme.breakpoints.md} { 
-        width: 100%;
+        min-width: 100%;
         background-color: #F8C982;
         align-items: center;
     }
@@ -117,7 +117,7 @@ export const Cards = styled.div `
     box-shadow: 10px 7px 0px #000000;
 
     @media ${(props) => props.theme.breakpoints.md} { 
-        margin-bottom: 3rem !important; 
+        margin-bottom: 0.5rem !important; 
     }
 `
 
@@ -195,3 +195,17 @@ export const Button = styled.button `
     font-family: ${(props) => props.theme.fonts.main};
     font-size: 1.5rem;
 `;
+
+export const FooterContent = styled.div ` 
+    display: none;
+    
+    @media ${(props) => props.theme.breakpoints.md} { 
+        display: flex;
+        width: 100%;
+        z-index: 1;
+        bottom: 0;
+        position: fixed;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    }
+
+`
