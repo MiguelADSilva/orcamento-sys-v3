@@ -9,6 +9,9 @@ export const orcamentoAPI = createApi({
         getOrcamentos: builder.query({
             query: () => "/orcamento/getOrcamento/"
         }),
+        getMaterials: builder.query({ 
+            query: () => "/material/getMaterials/"
+        }),
         addMaterials: builder.mutation({
             query: (materials) => ({
                 url: `/material/createMaterial/`,
@@ -21,6 +24,7 @@ export const orcamentoAPI = createApi({
 
 export const {
     useGetOrcamentosQuery,
+    useGetMaterialsQuery,
     useAddMaterialsMutation
 } = orcamentoAPI;
 

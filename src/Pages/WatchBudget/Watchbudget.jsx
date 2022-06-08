@@ -22,7 +22,7 @@ import { useGetOrcamentosQuery } from '../../services/orcamentoAPI'
 
 const Watchbudget = () => {
 
-  const { data: budgetList, isFetching } = useGetOrcamentosQuery('orcamento');
+  const { data: budgetList, isFetching } = useGetOrcamentosQuery();
   const [budgetAppList, setBudgetAppList] = useState([]);
   const [search, setSearch] = useState('');
 
