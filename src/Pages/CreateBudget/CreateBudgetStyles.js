@@ -192,13 +192,51 @@ export const Button = styled.button `
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
     width: 10rem;
-    height: 3rem;
+    min-height: 3rem;
     margin-left: 1rem !important;
     margin-right: 0.5rem !important;
     cursor: pointer;
     font-weight: bold;
     font-family: ${(props) => props.theme.fonts.main};
     font-size: 1.5rem;
+`;
+
+export const InputQtd = styled.input ` 
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+    margin-top: -0.5rem !important;
+`;
+
+export const ShopListContent = styled.div ` 
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 3rem;
+    align-items: flex-end;
+    margin-top: 5rem !important;
+    position: fixed;
+`;
+
+export const SpanContent = styled.div` 
+    background-color: red;
+    position: fixed;
+    margin-right: 10rem !important;
+    border-radius: 50%;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -0.8rem !important;
+    z-index: 2;
+`; 
+
+export const Span = styled.span` 
+    z-index: 1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: ${(props) => props.theme.fonts.main};
 `;
 
 export const FooterContent = styled.div ` 
