@@ -14,7 +14,6 @@ import {
   TextFieldStyled, 
   ContentPrice,
   BtnStyle } from './AddMaterialStyles';
-import { Timer } from '@mui/icons-material';
 
 const AddMaterial = () => {
   const [nameMaterial, setNameMaterial] = useState('');

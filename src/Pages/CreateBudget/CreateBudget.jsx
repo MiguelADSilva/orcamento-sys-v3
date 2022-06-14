@@ -21,14 +21,17 @@ import {
   InputQtd,
   ShopListContent,
   Span,
-  SpanContent } from './CreateBudgetStyles'
+  SpanContent,
+  StyledLink } from './CreateBudgetStyles'
 
 
 const CreateBudget = () => {
 
-  const {orcamentoList} = useContext(OrcamentoContext)
+  const {orcamentoList, Incoming, TotalValue} = useContext(OrcamentoContext)
 
   const [orcamento, setOrcamento] = orcamentoList;
+  const [totalIncoming, setTotalIncoming] = Incoming;
+  const [totalPrice, setTotalPrice] = TotalValue;
   const [search, setSearch] = useState('');
   const [materials, setMaterials] = useState([]);
   const [qtd, setQtd] = useState(1);
@@ -41,9 +44,29 @@ const CreateBudget = () => {
     setMaterials(filteredData);
   }, [materialsList, search])
 
-  const handleSaveMaterialToOrcamento = (materialName, qtd) => {
-    console.log(materialName, qtd)
-    setQtd(1)
+  const handleSaveMaterialToOrcamento = (id, materialName, qtd, price, materialType, type, serie ,color, secondColor) => {
+    setQtd(1);
+        setOrcamento([...orcamento, {
+          cable_id: id,
+          cable_Name: materialName,
+          cable_Price: price,
+          type_Cable: materialType,
+          cable_Type: type,
+          cable_Meters: qtd,
+          cable_Serie: serie,
+          cable_PrimaryColor: color,
+          cable_Color: secondColor
+        }])
+    setTotalIncoming([...totalIncoming, qtd * price])
+    console.log(totalIncoming)
+  }
+
+  const handleClickToCalculate = () => {
+    let soma = 0;
+    for (let i = 0; i < totalIncoming.length; i++){
+      soma += parseInt(totalIncoming[i])
+      setTotalPrice(soma);
+    }
   }
 
   return (
@@ -52,9 +75,11 @@ const CreateBudget = () => {
       <HeaderC />
         <ShopListContent>
           <SpanContent>
-            <Span>{qtd}</Span>
+            <Span>{orcamento.length}</Span>
           </SpanContent>
-          <Button>Lista de Compras</Button>
+          <StyledLink to="/detailBudget">
+            <Button>Lista de Compras</Button>
+          </StyledLink>
         </ShopListContent>
         <SearchContent>
           <SearchIcon />
@@ -92,8 +117,11 @@ const CreateBudget = () => {
                 <DescriptionTxt><b>Quantidade:</b></DescriptionTxt><DescriptionTxt><InputQtd type="number" id="quantity" value={qtd} name="quantity" min="1" max="9999999" onChange={(e) => setQtd(e.target.value)} /></DescriptionTxt>
               </CardDescription>
               <ContentBtn>
-                <Button onClick={() => handleSaveMaterialToOrcamento(material.cableName, qtd)}>Adicionar</Button>
-                <Button>Apagar Item</Button>
+                <Button 
+                  onClick={() => handleSaveMaterialToOrcamento(material._id, material.cableName, qtd, material.price, material.cableType, material.type, material.serie ,material.primaryColor, material.color)}>
+                    Adicionar
+                </Button>
+                <Button onClick={handleClickToCalculate()}>Apagar Item</Button>
               </ContentBtn>
             </Cards>
         ))}

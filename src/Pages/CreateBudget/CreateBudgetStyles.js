@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { SearchOutlined } from '@ant-design/icons'
+import { Link } from 'react-router-dom';
 
 export const ContentBudget = styled.div ` 
     min-width: 100%;
@@ -250,5 +251,6 @@ export const FooterContent = styled.div `
         position: fixed;
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     }
-
 `
+
+export const StyledLink = styled(Link) ` `;

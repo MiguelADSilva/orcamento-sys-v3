@@ -19,6 +19,13 @@ export const orcamentoAPI = createApi({
                 body: materials
             })
         }),
+        addOrcamento: builder.mutation({ 
+            query: (orcamento) => ({ 
+                url: `/orcamento/saveOrcamento/`,
+                method: "POST",
+                body: orcamento
+             })
+        }),
         deleteMaterial: builder.mutation({
             query: (cableName) => ({ 
                url: `/material/deleteMaterial/${cableName}`,
@@ -38,6 +45,7 @@ export const {
     useGetOrcamentosQuery,
     useGetMaterialsQuery,
     useAddMaterialsMutation,
+    useAddOrcamentoMutation,
     useDeleteMaterialMutation,
     useDeleteOrcamentoMutation
 } = orcamentoAPI;
