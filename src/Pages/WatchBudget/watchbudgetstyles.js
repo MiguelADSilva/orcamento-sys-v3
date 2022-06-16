@@ -4,6 +4,7 @@ import { SearchOutlined } from '@ant-design/icons'
 
 export const Content = styled.div `
     min-width: 100%;
+    min-height: 100vh;
     background-color: #F8C982;
     display: flex;
     flex-direction: column;
@@ -12,6 +13,7 @@ export const Content = styled.div `
 
     @media ${(props) => props.theme.breakpoints.md} { 
         min-width: 100%;
+        min-height: 100vh;
         background-color: #F8C982;
         align-items: center;
     }

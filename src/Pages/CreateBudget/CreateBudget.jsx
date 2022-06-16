@@ -46,17 +46,17 @@ const CreateBudget = () => {
 
   const handleSaveMaterialToOrcamento = (id, materialName, qtd, price, materialType, type, serie ,color, secondColor) => {
     setQtd(1);
-        setOrcamento([...orcamento, {
-          cable_id: id,
-          cable_Name: materialName,
-          cable_Price: price,
-          type_Cable: materialType,
-          cable_Type: type,
-          cable_Meters: qtd,
-          cable_Serie: serie,
-          cable_PrimaryColor: color,
-          cable_Color: secondColor
-        }])
+    setOrcamento([...orcamento, {
+      cable_id: id,
+      cable_Name: materialName,
+      cable_Price: price,
+      type_Cable: materialType,
+      cable_Type: type,
+      cable_Meters: qtd,
+      cable_Serie: serie,
+      cable_PrimaryColor: color,
+      cable_Color: secondColor
+    }])
     setTotalIncoming([...totalIncoming, qtd * price])
     console.log(totalIncoming)
   }

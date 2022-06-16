@@ -29,19 +29,19 @@ const DetailBudget = () => {
   const [totalPrice, setTotalPrice] = TotalValue;
   const [addOrcamento, result] = useAddOrcamentoMutation();
 
-  const [saveOrcamento, setSaveOrcamento] = useState([]);
+  const [saveOrcamento, setSaveOrcamento] = useState({});
   const [nameOrcamento, setNameOrcamento] = useState(''); 
 
   const onHandleClickToSave = async() => {
     if(nameOrcamento === '') {
       toast.error('Preencha o nome do orçamento!')
     }else{ 
-      setSaveOrcamento({
+      const add = {
         orcamentoName: nameOrcamento,
         totalPrice: totalPrice,
         items: orcamento
-      })
-      await addOrcamento(saveOrcamento);
+      }
+      await addOrcamento(add);
     }
   };
 
@@ -50,7 +50,7 @@ const DetailBudget = () => {
     alertSuccess();
   } else if(result.isError === true) { 
     alertError();
-  }
+  } 
 
   function alertError() {
     toast.error("💩 Algo de Errado não esta certo", {
