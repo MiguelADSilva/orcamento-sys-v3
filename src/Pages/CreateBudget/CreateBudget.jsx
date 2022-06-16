@@ -54,8 +54,8 @@ const CreateBudget = () => {
       cable_Type: type,
       cable_Meters: qtd,
       cable_Serie: serie,
-      cable_PrimaryColor: color,
-      cable_Color: secondColor
+      cable_primaryColor: color,
+      cable_color: secondColor
     }])
     setTotalIncoming([...totalIncoming, qtd * price])
     console.log(totalIncoming)

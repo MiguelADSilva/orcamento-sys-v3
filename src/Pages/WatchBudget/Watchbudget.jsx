@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 
 import { FooterC, HeaderC } from '../../components/indexComponents'
+import { OrcamentoContext } from '../../contexts/orcamentosContext'
 
 import { 
   Content, 
@@ -16,13 +17,19 @@ import {
   TotalItemsTxt,
   ContentBtn,
   Button,
-  FooterContent } from './watchbudgetstyles'
+  FooterContent,
+  StyledLink } from './watchbudgetstyles'
 
 import { useGetOrcamentosQuery } from '../../services/orcamentoAPI'
 
 const Watchbudget = () => {
 
+  const {OrcamentoPrice, OrcamentoTitle, OrcamentoItems} = useContext(OrcamentoContext)
+
   const { data: budgetList, isFetching } = useGetOrcamentosQuery();
+  const [orcamentoTitle, setOrcamentoTitle] = OrcamentoTitle;
+  const [orcamentoPrice, setOrcamentoPrice] = OrcamentoPrice;
+  const [orcamentoItems, setOrcamentoItems] = OrcamentoItems;
   const [budgetAppList, setBudgetAppList] = useState([]);
   const [search, setSearch] = useState('');
 
@@ -30,6 +37,12 @@ const Watchbudget = () => {
     const filteredData = budgetList?.orcamento.filter((budget) => budget.orcamentoName.toLowerCase().includes(search.toLowerCase()));
     setBudgetAppList(filteredData);
   }, [budgetList, search]);
+
+  function showMore(name, items, price) {
+    setOrcamentoTitle(name);
+    setOrcamentoPrice(price);
+    setOrcamentoItems(items);
+  }
 
   if(isFetching) return 'Loading...';
 
@@ -55,7 +68,9 @@ const Watchbudget = () => {
                     <TotalItemsTxt>Total de items:</TotalItemsTxt><TotalItemsTxt>{budget?.items?.length}</TotalItemsTxt>
                   </CardDescription>
                   <ContentBtn>
-                    <Button>Ver</Button>
+                    <StyledLink to="/description">
+                      <Button onClick={() => showMore(budget.name, budget.items, budget.totalPrice)}>Ver</Button>
+                    </StyledLink>
                     <Button>Enviar</Button>
                     <Button>Eliminar</Button>
                   </ContentBtn>

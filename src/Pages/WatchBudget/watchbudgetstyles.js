@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { SearchOutlined } from '@ant-design/icons'
-
+import { Link } from 'react-router-dom';
 
 export const Content = styled.div `
     min-width: 100%;
@@ -107,7 +107,7 @@ export const CardsContent = styled.div `
 `;
 
 export const Cards = styled.div ` 
-    width: 19rem;
+    min-width: 19rem;
     height: 20rem;
     background-color: #fff;
     float: left !important;
@@ -124,14 +124,15 @@ export const Cards = styled.div `
 `
 
 export const CardTitle = styled.div ` 
-    width: 19rem;
-    height: 5rem;
+    min-width: 1rem;
+    min-height: 5rem;
     background-color: #CE5DD0;
     background: #CE5DD0;
     border: 9px solid #000000;
     border-radius: 0px 0px 20px 20px;
     margin-left: -0.5rem !important;
     margin-top: -0.5rem !important;
+    margin-right: -0.5rem !important;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -170,8 +171,8 @@ export const HR = styled.hr`
 `;
 
 export const ContentBtn = styled.div ` 
-    width: 100%;
-    height: 6.5rem;
+    min-width: 100%;
+    min-height: 6.5rem;
     margin-top: 3rem !important;
     margin-left: -0.5rem !important;
     border: 9px solid #000000;
@@ -188,14 +189,18 @@ export const Button = styled.button `
     border: 3px solid #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
-    width: 10rem;
-    height: 3rem;
+    min-width: 5rem;
+    min-height: 3rem;
     margin-left: 1rem !important;
     margin-right: 0.5rem !important;
     cursor: pointer;
     font-weight: bold;
     font-family: ${(props) => props.theme.fonts.main};
     font-size: 1.5rem;
+
+    @media ${(props) => props.theme.breakpoints.md} { 
+        min-width: 4rem;
+    }
 `;
 
 export const FooterContent = styled.div ` 
@@ -209,5 +214,6 @@ export const FooterContent = styled.div `
         position: fixed;
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     }
-
 `
+
+export const StyledLink = styled(Link) ` `;
