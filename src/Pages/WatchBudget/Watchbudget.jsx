@@ -2,6 +2,7 @@ import React, {useEffect, useState, useContext} from 'react'
 
 import { FooterC, HeaderC } from '../../components/indexComponents'
 import { OrcamentoContext } from '../../contexts/orcamentosContext'
+import { deleteOrcamento } from '../../services/api'
 
 import { 
   Content, 
@@ -44,6 +45,13 @@ const Watchbudget = () => {
     setOrcamentoItems(items);
   }
 
+  function onHandleClickToRemoveItem(name) {
+    let isExecute = confirm(`Deseja mesmo remover este item ${name}`)
+    if (isExecute === true ) {
+      deleteOrcamento(name);
+    }
+  }
+
   if(isFetching) return 'Loading...';
 
   return (
@@ -72,7 +80,7 @@ const Watchbudget = () => {
                       <Button onClick={() => showMore(budget.name, budget.items, budget.totalPrice)}>Ver</Button>
                     </StyledLink>
                     <Button>Enviar</Button>
-                    <Button>Eliminar</Button>
+                    <Button onClick={() => onHandleClickToRemoveItem(budget.orcamentoName)}>Eliminar</Button>
                   </ContentBtn>
                 </Cards>
                 </>

@@ -3,6 +3,8 @@ import { HeaderC, FooterC } from '../../components/indexComponents'
 import { useGetMaterialsQuery } from '../../services/orcamentoAPI'
 import { OrcamentoContext } from '../../contexts/orcamentosContext'
 
+import { deleteMaterial } from '../../services/api'
+
 import { 
   ContentBudget, 
   SearchContent, 
@@ -69,9 +71,17 @@ const CreateBudget = () => {
     }
   }
 
+  function onHandleClickToRemoveItem(name) {
+    let isExecute = confirm(`Deseja mesmo remover este material ${name}`)
+    if(isExecute === true) {
+      deleteMaterial(name)
+    }
+  }
+
   return (
     <div>
       <ContentBudget>
+      {handleClickToCalculate()}
       <HeaderC />
         <ShopListContent>
           <SpanContent>
@@ -121,7 +131,7 @@ const CreateBudget = () => {
                   onClick={() => handleSaveMaterialToOrcamento(material._id, material.cableName, qtd, material.price, material.cableType, material.type, material.serie ,material.primaryColor, material.color)}>
                     Adicionar
                 </Button>
-                <Button onClick={handleClickToCalculate()}>Apagar Item</Button>
+                <Button onClick={() => onHandleClickToRemoveItem(material.cableName)}>Apagar Item</Button>
               </ContentBtn>
             </Cards>
         ))}
