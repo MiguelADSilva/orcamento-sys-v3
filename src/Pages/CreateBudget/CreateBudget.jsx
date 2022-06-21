@@ -83,6 +83,7 @@ const CreateBudget = () => {
       <ContentBudget>
       {handleClickToCalculate()}
       <HeaderC />
+        <h1>Total de items: {materials?.length}</h1>
         <ShopListContent>
           <SpanContent>
             <Span>{orcamento.length}</Span>

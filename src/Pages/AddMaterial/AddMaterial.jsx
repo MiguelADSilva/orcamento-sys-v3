@@ -232,5 +232,6 @@ const typeOptions = [
   { title: "Tubos Flexíveis"},
   { title: "Calhas"},
   { title: "Transformadores"},
-  { title: "Iluminação"}
+  { title: "Iluminação"},
+  { title: "Tampa"}
 ];
