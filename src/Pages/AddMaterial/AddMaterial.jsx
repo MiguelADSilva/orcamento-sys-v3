@@ -215,7 +215,6 @@ const typeOptions = [
   { title: "Centros"},
   { title: "Inversores"},
   { title: "Botões"},
-  { title: "Crono Termostato"},
   { title: "Termostato"},
   { title: "Detetores"},
   { title: "Comandos"},
@@ -229,4 +228,9 @@ const typeOptions = [
   { title: "Caixa"},
   { title: "Relé"},
   { title: "Emissor"},
+  { title: "Tubos Rigidos"},
+  { title: "Tubos Flexíveis"},
+  { title: "Calhas"},
+  { title: "Transformadores"},
+  { title: "Iluminação"}
 ];
