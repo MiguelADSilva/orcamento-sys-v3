@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { OrcamentoProvider } from './contexts/orcamentosContext';
-import { HomePage, CreatePage, AddMaterialPage, DetailBudgetPage, DescriptionBudget } from './Pages/indexPages';
+import { HomePage, CreatePage, AddMaterialPage, DetailBudgetPage, DescriptionBudgetPage, SendBudgetPage } from './Pages/indexPages';
 
 import theme from './theme/default';
 import './theme/MainApp.css'
@@ -17,7 +17,8 @@ const  App = () => {
             <Route path='/create' element={<CreatePage />} />
             <Route path='/addMaterial' element={<AddMaterialPage />} />
             <Route path='/detailBudget' element={<DetailBudgetPage />} />
-            <Route path='/description' element={<DescriptionBudget />} />
+            <Route path='/description' element={<DescriptionBudgetPage />} />
+            <Route path='/send' element={<SendBudgetPage />} />
           </Routes>
         </ThemeProvider>
       </OrcamentoProvider>

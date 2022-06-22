@@ -22,6 +22,7 @@ import {
   StyledLink } from './watchbudgetstyles'
 
 import { useGetOrcamentosQuery } from '../../services/orcamentoAPI'
+import { jssPreset } from '@material-ui/core'
 
 const Watchbudget = () => {
 
@@ -33,6 +34,11 @@ const Watchbudget = () => {
   const [orcamentoItems, setOrcamentoItems] = OrcamentoItems;
   const [budgetAppList, setBudgetAppList] = useState([]);
   const [search, setSearch] = useState('');
+  const [helpMoney, setHelpMoney] = useState(0);
+  const [email, setEmail] = useState('');
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [values, setValues] = useState([])
+  const [send, setSend] = useState([]);
 
   useEffect(() => {
     const filteredData = budgetList?.orcamento.filter((budget) => budget.orcamentoName.toLowerCase().includes(search.toLowerCase()));
@@ -49,6 +55,34 @@ const Watchbudget = () => {
     let isExecute = confirm(`Deseja mesmo remover este item ${name}`)
     if (isExecute === true ) {
       deleteOrcamento(name);
+    }
+  }
+
+  function onHandleClickToSend(materials, price) {
+    let add = prompt('Adiciona o valor para mão de obra, transporte e alimantação: ' )
+    setSend([])
+    if(add == null || add == '') {
+      setHelpMoney(0)
+    } else {
+      setTotalPrice(parseInt(price) + parseInt(add))
+      let email = prompt('Introduza o email da pessoa: ')
+      if (email == null || email == '') {
+        setEmail('')
+      } else {
+        setEmail(email)
+       // values.push(materials, totalPrice)
+          setValues({
+            materials
+          })
+          Object.entries(values).map((item, id) => {
+            setSend({
+            "Valor Total": totalPrice,
+            "Materiais": item
+            })
+          })
+          console.log(send)
+         window.location.href=`mailto:${email}?subject= Orçamento&body=` + encodeURIComponent(JSON.stringify(send))
+      }
     }
   }
 
@@ -79,7 +113,7 @@ const Watchbudget = () => {
                     <StyledLink to="/description">
                       <Button onClick={() => showMore(budget.name, budget.items, budget.totalPrice)}>Ver</Button>
                     </StyledLink>
-                    <Button>Enviar</Button>
+                      <Button onClick={ () => onHandleClickToSend(budget.items, budget.totalPrice)}>Enviar</Button>
                     <Button onClick={() => onHandleClickToRemoveItem(budget.orcamentoName)}>Eliminar</Button>
                   </ContentBtn>
                 </Cards>

@@ -123,7 +123,7 @@ export const Cards = styled.div `
 `
 
 export const CardTitle = styled.div ` 
-    min-width: 19rem;
+    min-width: 22rem;
     min-height: 5rem;
     background-color: #CE5DD0;
     background: #CE5DD0;
@@ -135,6 +135,10 @@ export const CardTitle = styled.div `
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        min-width: 20rem;
+    }
 `;
 
 export const Title = styled.h1 ` 
