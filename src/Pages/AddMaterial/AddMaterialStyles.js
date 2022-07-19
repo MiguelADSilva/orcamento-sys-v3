@@ -18,7 +18,7 @@
 
     export const Input = styled.input` 
 
-        background: #CE5DD0;
+        background: white;
         border: 7px solid #000000;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
@@ -26,21 +26,21 @@
         height: 4rem;
         font-size: 2rem;
         padding-left: 1rem !important;
-        color: white;
+        color: black;
         margin-bottom: 2rem !important;
 
         &::placeholder { 
             width: 100%;
             font-size: 2rem;
             padding-left: 1rem !important;
-            color: white;
+            color: black;
             font-family: ${(props) => props.theme.fonts.main};
             font-weight: bold;
             margin-bottom: 2rem !important;
         }
 
         @media ${(props) => props.theme.breakpoints.md} { 
-            background: #CE5DD0;
+            background: white;
             border: 7px solid #000000;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
             border-radius: 25px;
@@ -48,14 +48,14 @@
             height: 4rem;
             font-size: 2rem;
             padding-left: 1rem !important;
-            color: white;
+            color: black;
             margin-bottom: 2rem !important;
 
             &::placeholder { 
                 width: 100%;
                 font-size: 2rem;
                 padding-left: 1rem !important;
-                color: white;
+                color: black;
                 font-family: ${(props) => props.theme.fonts.main};
                 font-weight: bold;
                 margin-bottom: 2rem !important;
@@ -65,7 +65,7 @@
 
     export const DropDownContent = styled.div` 
 
-        background: #CE5DD0;
+        background: white;
         border: 7px solid #000000;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
@@ -73,7 +73,7 @@
         height: 4rem;
         font-size: 2rem;
         padding-left: 1rem !important;
-        color: white;
+        color: black;
         margin-bottom: 2rem !important;
         display: flex;
         flex-direction: column;
@@ -83,13 +83,13 @@
             width: 100%;
             font-size: 1.5rem;
             padding-left: 1rem !important;
-            color: white;
+            color: black;
             font-family: ${(props) => props.theme.fonts.main};
             font-weight: bold;
         }
 
         @media ${(props) => props.theme.breakpoints.md} { 
-            background: #CE5DD0;
+            background: white;
             border: 7px solid #000000;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
             border-radius: 25px;
@@ -97,7 +97,7 @@
             height: 4rem;
             font-size: 2rem;
             padding-left: 1rem !important;
-            color: white;
+            color: black;
             margin-bottom: 2rem !important;
             display: flex;
             flex-direction: column;
@@ -107,7 +107,7 @@
                 width: 100%;
                 font-size: 1.5rem;
                 padding-left: 1rem !important;
-                color: white;
+                color: black;
                 font-family: ${(props) => props.theme.fonts.main};
                 font-weight: bold;
             }
@@ -149,9 +149,8 @@
     `;
 
     export const BtnStyle = styled.button` 
-
-        background-color: #CE5DD0;
-        background: #CE5DD0;
+        background-color: white;
+        background: white;
         border: 3px solid #000000;
         box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.50);
         border-radius: 9px;
@@ -164,7 +163,7 @@
         font-weight: bold;
         font-family: ${(props) => props.theme.fonts.main};
         font-size: 1.5rem;
-        color: white;
+        color: black;
 
         @media ${(props) => props.theme.breakpoints.md} { 
             margin-bottom: 10rem !important;

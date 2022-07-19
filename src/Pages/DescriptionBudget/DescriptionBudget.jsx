@@ -23,6 +23,8 @@ const DescriptionBudget = () => {
     <Content>
         <HeaderC />
         <h1>{orcamentoTitle}</h1>
+        <h1>Total a Pagar: {orcamentoPrice}€</h1>
+        {console.log(orcamentoItems)}
         <CardsContent>
             {Object.entries(orcamentoItems).map(([id, item]) => (
                 <Cards key={id}>
@@ -30,13 +32,13 @@ const DescriptionBudget = () => {
                         <Title>{item.cable_Name}</Title>
                     </CardTitle>
                     <CardDescription>
-                      <PriceTxt>Serie:</PriceTxt><PriceTxt>{item.Serie}</PriceTxt>
+                      <PriceTxt>Serie:</PriceTxt><PriceTxt>{item.cable_Serie}</PriceTxt>
                   </CardDescription>
                   <CardDescription>
-                      <PriceTxt>Modelo de Cor:</PriceTxt><PriceTxt>{item.cable_PrimaryColor}</PriceTxt>
+                      <PriceTxt>Modelo de Cor:</PriceTxt><PriceTxt>{item.cable_primaryColor}</PriceTxt>
                   </CardDescription>
                   <CardDescription>
-                      <PriceTxt>Cores Disponiveis:</PriceTxt><PriceTxt>{item.cable_Color}</PriceTxt>
+                      <PriceTxt>Cores Disponiveis:</PriceTxt><PriceTxt>{item.cable_color}</PriceTxt>
                   </CardDescription>
                   <CardDescription>
                       <PriceTxt>Metros/Quantidade:</PriceTxt><PriceTxt>{item.cable_Meters}</PriceTxt>
@@ -45,7 +47,7 @@ const DescriptionBudget = () => {
                       <PriceTxt>Material:</PriceTxt><PriceTxt>{item.type_Cable}</PriceTxt>
                   </CardDescription>
                   <CardDescription>
-                      <PriceTxt>Preço:</PriceTxt><PriceTxt>{item.cable_Price}</PriceTxt>
+                      <PriceTxt>Preço:</PriceTxt><PriceTxt>{item.cable_Price}€</PriceTxt>
                   </CardDescription>
                 </Cards>
             ))}

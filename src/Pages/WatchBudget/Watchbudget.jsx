@@ -81,7 +81,7 @@ const Watchbudget = () => {
             })
           })
           console.log(send)
-         window.location.href=`mailto:${email}?subject= Orçamento&body=` + encodeURIComponent(JSON.stringify(send))
+          window.location.href=`mailto:${email}?subject= Orçamento&body=` + JSON.stringify(send)
       }
     }
   }
@@ -111,7 +111,7 @@ const Watchbudget = () => {
                   </CardDescription>
                   <ContentBtn>
                     <StyledLink to="/description">
-                      <Button onClick={() => showMore(budget.name, budget.items, budget.totalPrice)}>Ver</Button>
+                      <Button onClick={() => showMore(budget.orcamentoName, budget.items, budget.totalPrice)}>Ver</Button>
                     </StyledLink>
                       <Button onClick={ () => onHandleClickToSend(budget.items, budget.totalPrice)}>Enviar</Button>
                     <Button onClick={() => onHandleClickToRemoveItem(budget.orcamentoName)}>Eliminar</Button>

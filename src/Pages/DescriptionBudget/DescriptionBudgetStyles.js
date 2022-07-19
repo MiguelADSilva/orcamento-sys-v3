@@ -53,8 +53,8 @@ export const Cards = styled.div `
 export const CardTitle = styled.div ` 
     min-width: 1rem;
     min-height: 5rem;
-    background-color: #CE5DD0;
-    background: #CE5DD0;
+    background-color: white;
+    background: white;
     border: 9px solid #000000;
     border-radius: 0px 0px 20px 20px;
     margin-left: -0.5rem !important;
@@ -67,7 +67,7 @@ export const CardTitle = styled.div `
 `;
 
 export const Title = styled.h1 ` 
-    color: white;
+    color: black;
     font-family: ${(props) => props.theme.fonts.main};
 `;
 

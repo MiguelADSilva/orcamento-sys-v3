@@ -20,7 +20,7 @@ export const ContentBudget = styled.div `
 export const SearchContent = styled.div `
     width: 23rem;
     height: 4rem;
-    background-color: #CE5DD0;
+    background-color: white;
     border: 7px solid #000000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
@@ -33,7 +33,7 @@ export const SearchContent = styled.div `
 
     @media ${(props) => props.theme.breakpoints.md} { 
         width: 20rem;
-        background-color: #CE5DD0;
+        background-color: white;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -43,13 +43,13 @@ export const SearchContent = styled.div `
 `;
 
 export const Search = styled.input ` 
-    background-color: #CE5DD0;
+    background-color: white;
     width: 18rem;
     height: 4rem;
     border: 0;
     outline: 0;
     font-size: 2rem;
-    color: white;
+    color: black;
     font-weight: bold;
 
     @media ${(props) => props.theme.breakpoints.md} { 
@@ -57,7 +57,7 @@ export const Search = styled.input `
         font-size: 2rem;
 
         &::placeholder { 
-            color: white;
+            color: black;
             font-family: ${(props) => props.theme.fonts.main};
             font-weight: bold;
         }
@@ -70,7 +70,7 @@ export const Search = styled.input `
     }
 
     &::placeholder { 
-        color: white;
+        color: black;
         font-family: ${(props) => props.theme.fonts.main};
         font-weight: bold;
     }
@@ -125,8 +125,8 @@ export const Cards = styled.div `
 export const CardTitle = styled.div ` 
     min-width: 22rem;
     min-height: 5rem;
-    background-color: #CE5DD0;
-    background: #CE5DD0;
+    background-color: white;
+    background: white;
     border: 9px solid #000000;
     border-radius: 0px 0px 20px 20px;
     margin-left: -0.5rem !important;
@@ -142,7 +142,7 @@ export const CardTitle = styled.div `
 `;
 
 export const Title = styled.h1 ` 
-    color: white;
+    color: black;
     font-family: ${(props) => props.theme.fonts.main};
 `;
 
@@ -191,8 +191,8 @@ export const ContentBtn = styled.div `
 `;
 
 export const Button = styled.button ` 
-    background-color: #CE5DD0;
-    background: #CE5DD0;
+    background-color: white;
+    background: white;
     border: 3px solid #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
