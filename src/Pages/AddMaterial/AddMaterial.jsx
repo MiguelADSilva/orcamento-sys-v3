@@ -179,6 +179,7 @@ const serieOptions = [
   { title: "Estanque48" },
   { title: "47" },
   { title: "Burótica" },
+  { title: "Iluminação" }
 ];
 
 const primaryColorOptions = [
