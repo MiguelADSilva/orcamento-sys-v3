@@ -104,7 +104,7 @@ const Watchbudget = () => {
                     <Title>{budget.orcamentoName}</Title>
                   </CardTitle>
                   <CardDescription>
-                      <PriceTxt>Total a Pagar:</PriceTxt><PriceTxt>{budget.totalPrice}</PriceTxt>
+                      <PriceTxt>Total a Pagar:</PriceTxt><PriceTxt>{budget.totalPrice}€</PriceTxt>
                   </CardDescription>
                   <CardDescription>
                     <TotalItemsTxt>Total de items:</TotalItemsTxt><TotalItemsTxt>{budget?.items?.length}</TotalItemsTxt>
