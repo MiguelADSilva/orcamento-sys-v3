@@ -7,7 +7,8 @@ export const orcamentoAPI = createApi({
     baseQuery: fetchBaseQuery({baseUrl: "https://ele-sys.herokuapp.com"}),
     endpoints: (builder) => ({
         getOrcamentos: builder.query({
-            query: () => "/orcamento/getOrcamento/"
+            query: () => "/orcamento/getOrcamento/",
+            mode: 'no-cors',
         }),
         getMaterials: builder.query({ 
             query: () => "/material/getMaterials/"
