@@ -4,11 +4,10 @@ const createRequest = (url) => ({ url, mode: "cors", Headers: { "Content-Type": 
 
 export const orcamentoAPI = createApi({ 
     reducerPath: 'orcamentoAPI',
-    baseQuery: fetchBaseQuery({baseUrl: "https://ele-sys.herokuapp.com"}),
+    baseQuery: fetchBaseQuery({baseUrl: "https://ele-sys-api.onrender.com"}),
     endpoints: (builder) => ({
         getOrcamentos: builder.query({
-            query: () => "/orcamento/getOrcamento/",
-            mode: 'no-cors',
+            query: () => "/orcamento/getOrcamento/"
         }),
         getMaterials: builder.query({ 
             query: () => "/material/getMaterials/"
